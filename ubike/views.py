@@ -46,7 +46,7 @@ def get_nearst2_stations(station_data, query_lat, query_lng):
 def ubike(request):
     status_code = "-3"
     result = []
-    if request.GET['lat'] and request.GET['lng']:#lat or lng is set or not
+    if request.GET.get('lat', False) and request.GET.get('lng', False):#lat or lng is set or not
         lat = request.GET['lat']
         lng = request.GET['lng']
         try:
